@@ -14,10 +14,18 @@ let s = 0;
 
 let start = 10;
 let timer;
+var contando = false;
 
 function iniciarTempo() {
-  timer = setInterval(() => { stopwatch(); }, start);
-  iniciar.removeAttribute('disabled', '')
+	if (contando == true){
+    clearInterval(timer);
+  	iniciar.removeAttribute('disabled', '')
+    return contando = false;
+  }else{
+    timer = setInterval(() => { stopwatch(); }, start);
+  	iniciar.removeAttribute('disabled', '')
+  }
+  return contando = true;
 }
 
 function pausarTempo() {
