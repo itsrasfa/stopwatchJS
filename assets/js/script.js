@@ -17,7 +17,7 @@ let timer;
 
 function iniciarTempo() {
   timer = setInterval(() => { stopwatch(); }, start);
-  iniciar.removeAttribute('disabled', '')
+  iniciar.setAttribute('disabled', '')
 }
 
 function pausarTempo() {
